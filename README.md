@@ -21,13 +21,13 @@
 ## Как использовать
 
 1. Установите необходимые зависимости: 
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 2. Запустите приложение:
-  ```bash
-  streamlit run streamlit_app.py
-  ```
+```bash
+streamlit run streamlit_app.py
+```
 3. Введите URL описания вакансии и URL резюме кандидата в соответствующие поля.
 4. Нажмите кнопку "Оценить резюме" для начала процесса оценки.
 
