@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 import logging
 
-# Setting up logging
+# Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -13,7 +13,7 @@ def extract_vacancy_data(html):
     def get_text_or_default(tag, default="Данные не указаны"):
         return tag.get_text(strip=True) if tag else default
 
-    # Extracting vacancy details
+    # Извлечение данных о вакансии
     title = get_text_or_default(soup.find("h1", {"data-qa": "vacancy-title"}), "Заголовок не найден")
     salary = get_text_or_default(soup.find("span", {"data-qa": "vacancy-salary"}), "Зарплата не указана")
     experience = get_text_or_default(soup.find("span", {"data-qa": "vacancy-experience"}), "Опыт не указан")
@@ -25,7 +25,7 @@ def extract_vacancy_data(html):
     skills_tags = soup.find_all("span", {"data-qa": "bloko-tag__text"})
     skills = [skill.get_text(strip=True) for skill in skills_tags] if skills_tags else []
 
-    # Generating Markdown
+    # Формирование строки в формате Markdown
     markdown = f"""
 # {title}
 
